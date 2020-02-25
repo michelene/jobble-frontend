@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+.JobContainer img {
+  max-height: 4rem;
+}
+
+.Apply {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+#root {
+  display: grid;
+  grid-template-areas: 'header header' 'aside main';
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 110px 1fr;
+}
+
+/*     HEADER     */
+
+header {
+  border-bottom: 1px solid grey;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  grid-area: header;
+}
+
+.header-logo {
+  width: 100px;
+  margin-right: 15px;
+}
+
+.title {
+  font-family: 'Comfortaa', cursive;
+  font-size: 3rem;
+}
+#tagline {
+  font-size: 0.75rem;
+  margin: 0 0 0 4px;
+}
+/*     SIDEBAR     */
+
+aside {
+  grid-area: aside;
+  padding: 15px;
+  border-right: 1px solid grey;
+  height: 100vh;
+}
+
+.nav-link {
+  display: block;
+  border-bottom: 1px solid grey;
+  height: 70px;
+  line-height: 70px; /* Keep this equal to height */
+  font-size: 1.4rem;
+}
+
+/*     MAIN     */
+
+main {
+  grid-area: main;
+}
+
+@media (max-width: 750px) {
+  #root {
+    display: block;
+  }
+  /*-----SIDEBAR-----*/
+  aside {
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.3s all ease;
+  }
+
+  aside.open {
+    height: 310px; /* Height set for 4 nav links */
+  }
+  /*-----HAMBURGER-----*/
+  .menu-btn-container {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 15px 0 auto;
+    top: 20px;
+    right: 10px;
+  }
+
+  .menu-btn {
+    width: 35px;
+    height: 4px;
+    background: #000;
+    border-radius: 4px;
+    transition: 0.3s all ease-in-out;
+  }
+
+  .menu-btn::before,
+  .menu-btn::after {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 4px;
+    background: #000;
+    border-radius: 4px;
+    transition: 0.3s all ease-in-out;
+  }
+
+  .menu-btn::before {
+    transform: translateY(-10px);
+  }
+
+  .menu-btn::after {
+    transform: translateY(10px);
+  }
+
+  /* ANIMATION */
+  .menu-btn-container.open .menu-btn {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+  }
+  .menu-btn-container.open .menu-btn::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  .menu-btn-container.open .menu-btn::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+}
+/* About Page */
+
+.profiles {
+  margin: 3%;
+  display: inline-block;
+  text-align: center;
+}
+.pic {
+  border-radius: 50%;
+  box-shadow: 10px 10px 24px -6px rgba(0, 0, 0, 0.61);
+}
+.profileName {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+}
+.profileContainer {
+  text-align: center;
+}
+.aboutContainer {
+  margin: 2%;
+}
+.ourTeam {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin: 4% 0 4% 0;
+}
+.aboutHeader {
+  font-family: 'Montserrat', sans-serif;
+}
+h2.aboutHeader {
+  font-size: medium;
+  margin: 1% 0 1% 0;
+}
+.jobPic {
+  text-align: center;
+}
+.Text {
+  text-align: center;
+  padding: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Text2 {
+  text-align: center;
+  font-size: 15px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: #287ec7;
+  color: red;
+  padding: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Jobs List */
+
+.JobLists {
+  padding-top: 18px;
+  text-decoration: underline;
+  padding-inline-start: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Jobs container */
+
+.JobContainerButtons {
+  padding: 10px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.JobContainerButton {
+  background-color: coral;
+  line-height: 30px;
+  border-radius: 30px;
+  padding: 2px;
+  width: 18%;
+  font-size: 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+}
+.logo {
+  margin: 25px;
+}
+.JobContainer {
+  padding-inline-start: 20px;
+  line-height: 170%;
+}
+
+/* SignUp Page */
+
+.signupContainer {
+  margin: 2%;
+}
+.signupHeader {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 0 1.5% 0;
+}
+.finePrint {
+  font-weight: normal;
+  padding: 1px;
+  color: gray;
+}
+
+/*UserForm*/
+
+.form {
+  margin: 2% 0 1% 0;
+}
+.typefields {
+  margin: 1%;
+}
+.userButton {
+  margin: 1% 0;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #666666;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
+}
+.userButton:hover {
+  background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+  background-color: #e9e9e9;
+}
+.userButton:active {
+  position: relative;
+  top: 1px;
+}
+label {
+  margin-bottom: 2rem;
+}
+
+/*User Home*/
+.UserHomeButton {
+  margin: 1%;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #666666;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
+}
+.UserHomeButton:hover {
+  background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+  background-color: #e9e9e9;
+}
+.UserHomeButton:active {
+  position: relative;
+  top: 1px;
+}
+.UserHomeButtons {
+  text-align: center;
+}
+.UserHomeH1 {
+  margin: 2%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Home */
+.animation {
+  width: 30%;
+}
+.animationContainer {
+  text-align: center;
+}
+.thoughtBubble {
+  width: 30%;
+  margin-left: 17%;
+  margin-top: 1%;
+}
+
+.Goodbye,
+.UserHome {
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem;
+}
